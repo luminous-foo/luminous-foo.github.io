@@ -140,6 +140,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-dataworks命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/24/dataworks%E5%91%BD%E4%BB%A4/">dataworks命令</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/24/dataworks%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-12-24T14:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、DDL语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">rename</span> <span class="keyword">to</span> table_name2;   <span class="comment">-- 修改表名</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 changeowner <span class="keyword">to</span> <span class="string">&#x27;ALIYUN$xxx@aliyun.com&#x27;</span>; <span class="comment">--修改表的所有人</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">set</span> <span class="keyword">COMMENT</span> <span class="string">&#x27;tbl comment&#x27;</span>; <span class="comment">--修改表注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> customer; <span class="comment">--修改字段名 </span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer <span class="keyword">COMMENT</span> <span class="string">&#x27;customer&#x27;</span>;<span class="comment">--修改字段注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name column_type <span class="keyword">COMMENT</span> <span class="string">&#x27;column_comment&#x27;</span>;<span class="comment">--同时修改列名和注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMNS</span> (col_name1 type1 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>,col_name2 type2 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>);<span class="comment">--添加列和注释</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dataworks</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/24/dataworks%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-java基础知识整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -289,11 +379,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -437,11 +527,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">dataworks</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
