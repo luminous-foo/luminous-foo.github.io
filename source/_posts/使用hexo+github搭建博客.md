@@ -12,8 +12,6 @@ tags:
 
 # 使用 Hexo+GitHub 搭建个人免费博客教程
 
-[![crystal](使用hexo+github搭建博客/v2-ddf3c47644330f3a1f84c2481a056c38_xs.jpg)](https://www.zhihu.com/people/crystal-33-50)
-
 ## 前言
 
 近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，其最吸引人的莫过于完全免费使用，并且非常稳定。
