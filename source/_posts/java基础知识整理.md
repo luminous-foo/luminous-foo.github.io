@@ -17,6 +17,8 @@ categories:
  面向过程 （Procedural Programming）侧重流程
  面向对象 （Object-Oriented Programming ）(OOP) 侧重功能
 
+<!--more-->
+
 ##### 1.2 类和对象的概念、关系、组成
 
 - 概念：
