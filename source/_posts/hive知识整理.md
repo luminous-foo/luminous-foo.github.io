@@ -9,6 +9,12 @@ categories:
 
 # Hive
 
+<!-- toc -->
+
+[TOC]
+
+
+
 ## 概述
 
 Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。
@@ -16,6 +22,8 @@ Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文�
 本质是将SQL转换为MapReduce程序
 
 主要用途：用来做离线数据分析，比直接用MapReduce开发效率更高
+
+<!--more-->
 
 ![img](hive知识整理/timg-1568381886490.jpg) 
 
@@ -1363,7 +1371,7 @@ show functions;
 
 ### 7.1大表join大表优化
 
-```
+```sql
 如果Hive优化实战2中mapjoin中小表dim_seller很大呢？比如超过了1GB大小？这种就是大表join大表的问题。首先引入一个具体的问题场景，然后基于此介绍各自优化方案。
 
 1、问题场景

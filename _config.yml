@@ -125,3 +125,6 @@ jsonContent:
       excerpt: false
       categories: true
       tags: true
+
+toc:
+  maxdepth: 3

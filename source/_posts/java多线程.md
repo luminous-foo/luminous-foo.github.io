@@ -19,6 +19,8 @@ categories:
 
 ### 4、使用线程池
 
+<!--more-->
+
 ![FutureTask](java多线程/20160713174739239)
 
 
