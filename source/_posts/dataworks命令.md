@@ -8,7 +8,12 @@ categories:
  - 工具
 ---
 
-一、DDL语句
+<!--toc-->
+
+[TOC]
+
+# 一、DDL语句
+
 ```sql
 
 alter table table_name1 rename to table_name2;   -- 修改表名
