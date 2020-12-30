@@ -11,9 +11,9 @@ categories:
 
 ## 概述
 
-Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件**映射**为一张数据库表，并提供类SQL查询功能。
+Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。
 
-本质是将**SQL转换为MapReduce**程序
+本质是将SQL转换为MapReduce程序
 
 主要用途：用来做离线数据分析，比直接用MapReduce开发效率更高
 
@@ -161,7 +161,7 @@ select * from tb_part where day = 19;
 
 ```
 
-- **手动分区**：加载数据时，手动指定文件的分区
+- 手动分区：加载数据时，手动指定文件的分区
 
   分区字段为查询的语句的最后一个字段 
 
@@ -181,9 +181,9 @@ select * from tb_part where day = 19;
 
   - 应用场景：将普通表的数据转换成一个分区表
     		   原始表【tb1】中的数据没有做分区
-    		   希望将原始表中的数据按照分区存放到新的分区表[tb2]
+      		   希望将原始表中的数据按照分区存放到新的分区表[tb2]
 
-  - **自动分区**：默认按照原始表的最后一列进行分区
+  - 自动分区：默认按照原始表的最后一列进行分区
 
   ```sql
   set hive.exec.dynamic.partition.mode=nonstrict;
@@ -193,7 +193,7 @@ select * from tb_part where day = 19;
   
   ```
 
-  **数据加载问题：**
+  数据加载问题：
   1-如果手动将数据文件放入一张普通表的目录下？表能不能读到数据？
 
   ​	可以，元数据查询时直接将表的目录作为查询目录
@@ -342,7 +342,7 @@ select * from tb_part where day = 19;
 
   #### order by
 
-  **全局排序，对整体进行排序，只有一个reduce的情况下**
+  全局排序，对整体进行排序，只有一个reduce的情况下
 
   在启用多个reduce的情况下如果使用order by 结果依旧全局有序，但只会启用一个reduce
 
@@ -353,7 +353,7 @@ select * from tb_part where day = 19;
 
   #### sort by
 
-  局部排序，多个reduce的 情况下，每个reduce内部有序（**分区内有序**）
+  局部排序，多个reduce的 情况下，每个reduce内部有序（分区内有序）
 
   ```sql
   set mapreduce.job.reduces=3;
@@ -386,7 +386,7 @@ select * from tb_part where day = 19;
 
 ## 3.hive参数配置
 
-### 3.1 Hive **shell命令行**
+### 3.1 Hive shell命令行
 
 针对bin/hive，除了可以当第一代客户端之外。还可以在hive中启动其他用途。
 
@@ -417,7 +417,7 @@ $HIVE_HOME/bin/hive -i /home/my/hive-init.sql
 
 
 
-### 3.2 **Hive** **参数配置方式**
+### 3.2 Hive 参数配置方式
 
 *Hive参数大全：*
 
@@ -427,13 +427,13 @@ $HIVE_HOME/bin/hive -i /home/my/hive-init.sql
 
 对于一般参数，有以下三种设定方式：
 
-**配置文件**   （全局有效）
+配置文件   （全局有效）
 
-**命令行参数**   （对hive启动实例有效）
+命令行参数   （对hive启动实例有效）
 
-**参数声明**   （对hive的连接session有效）
+参数声明   （对hive的连接session有效）
 
-**配置文件** 
+配置文件 
 
 用户自定义配置文件：$HIVE_CONF_DIR/hive-site.xml
 
@@ -445,13 +445,13 @@ $HIVE_HOME/bin/hive -i /home/my/hive-init.sql
 
 配置文件的设定对本机启动的所有Hive进程都有效。
 
- **命令行参数**
+ 命令行参数
 
 启动Hive（客户端或Server方式）时，可以在命令行添加-hiveconf来设定参数	例如：bin/hive -hiveconf hive.root.logger=INFO,console
 
 设定对本次启动的Session（对于Server方式启动，则是所有请求的Sessions）有效。
 
- **参数声明**
+ 参数声明
 
 可以在HQL中使用SET关键字设定参数，这一设定的作用域也是session级的。
 
@@ -606,7 +606,7 @@ FROM u_data;
 
 UDF（User-Defined-Function）普通函数 一进一出
 
-1、自定义一个类，**继承UDF,实现一个或重载多个evaluate方法**，打包上传jar包到linux环境
+1、自定义一个类，继承UDF,实现一个或重载多个evaluate方法，打包上传jar包到linux环境
 
 ```xml
        <!-- 指定该项目可以从哪些地方下载依赖包 -->
@@ -706,8 +706,8 @@ select fc_name(age),name from tb_name;
 
 #### 5.1.2自定义udf,udtf,udaf开发
 
-**UDF：**
-1-**开发udf程序：继承UDF类，实现一个或者多个evaluate方法**
+UDF：
+1-开发udf程序：继承UDF类，实现一个或者多个evaluate方法
 2-打成jar包
 3-上传jar包到集群中，并添加到hive的环境变量中，在hive中执行
 	add jar /export/datas/udf.jar;
@@ -718,8 +718,8 @@ select fc_name(age),name from tb_name;
 6-删除临时函数
 	DROP TEMPORARY FUNCTION transDate;
 
-**UDTF**
-1**-开发udtf程序：继承UDTF类，重写process方法**
+UDTF
+1-开发udtf程序：继承UDTF类，重写process方法
 2-打成jar包
 3-上传jar包到集群中，并添加到hive的环境变量中，在hive中执行
 	add jar /export/datas/udtf.jar;
@@ -740,8 +740,8 @@ select fc_name(age),name from tb_name;
 
 
 
-**UDAF**
-1-**开发udaf程序：继承UDAF类，重写iterate方法**
+UDAF
+1-开发udaf程序：继承UDAF类，重写iterate方法
 2-打成jar包
 3-上传jar包到集群中，并添加到hive的环境变量中，在hive中执行
 	add jar /export/datas/udaf.jar;
@@ -1180,9 +1180,9 @@ substring(col,-2,2) -> 'lo'
 
 show functions;
 
-使用**desc function  extended 函数名**查看帮助
+使用desc function  extended 函数名查看帮助
 
-**•UNIX时间戳转日期函数: from_unixtime**
+•UNIX时间戳转日期函数: from_unixtime
 
 • 获取当前UNIX时间戳函数: unix_timestamp
 
@@ -1190,7 +1190,7 @@ show functions;
 
 • 指定格式日期转UNIX时间戳函数: unix_timestamp
 
-**•日期时间转日期函数: to_date**
+•日期时间转日期函数: to_date
 
 •日期转年函数: year
 
@@ -1206,17 +1206,17 @@ show functions;
 
 • 日期转周函数: weekofyear
 
-**• 两个日期之间有多少个月:months_between('2020-01-10', u.birthday)**(多用户得出用户年龄)
+• 两个日期之间有多少个月:months_between('2020-01-10', u.birthday)(多用户得出用户年龄)
 
-**• 日期比较函数: datediff**
+• 日期比较函数: datediff
 
-**• 日期增加函数: date_add**
+• 日期增加函数: date_add
 
-**• 日期减少函数: date_sub**
+• 日期减少函数: date_sub
 
-**• 取当前天的下一周的周几：next_day("xxxx-xx-xx","Mo")**
+• 取当前天的下一周的周几：next_day("xxxx-xx-xx","Mo")
 
-**• 取当前月的最后一天：last_day("xxxx-xx-xx")**
+• 取当前月的最后一天：last_day("xxxx-xx-xx")
 
 •If函数: if
 
@@ -1228,9 +1228,9 @@ show functions;
 
 •字符串反转函数：reverse
 
-**•字符串连接函数：concat**
+•字符串连接函数：concat
 
-**• 带分隔符字符串连接函数：concat_ws**
+• 带分隔符字符串连接函数：concat_ws
 
 • 字符串截取函数：substr,substring
 
@@ -1238,13 +1238,13 @@ show functions;
 
 •正则表达式解析函数：regexp_extract
 
-**•URL解析函数：parse_url**
+•URL解析函数：parse_url
 
-​							**parse_url_tuple**
+​							parse_url_tuple
 
-**•json解析函数：get_json_object**
+•json解析函数：get_json_object
 
-​							**json_tuple**
+​							json_tuple
 
 •分割字符串函数: split
 
@@ -1357,4 +1357,417 @@ show functions;
 
 
 
-7.hive优化
+## 7.hive优化
+
+
+
+### 7.1大表join大表优化
+
+```
+如果Hive优化实战2中mapjoin中小表dim_seller很大呢？比如超过了1GB大小？这种就是大表join大表的问题。首先引入一个具体的问题场景，然后基于此介绍各自优化方案。
+
+1、问题场景
+问题场景如下：
+
+A表为一个汇总表，汇总的是卖家买家最近N天交易汇总信息，即对于每个卖家最近N天，其每个买家共成交了多少单，总金额是多少，假设N取90天，汇总值仅取成交单数。
+
+A表的字段有：buyer_id、seller_id、pay_cnt_90day。
+
+B表为卖家基本信息表，其字段有seller_id、sale_level，其中sale_levels是卖家的一个分层评级信息，比如吧卖家分为6个级别：S0、S1、S2、S3、S4和S5。
+
+要获得的结果是每个买家在各个级别的卖家的成交比例信息，比如：
+
+某买家：S0:10%；S1:20%；S2:20%；S3:10%；S4:20%；S5:10%。
+
+正如mapjoin中的例子一样，第一反应是直接join两表并统计：
+
+select
+
+m.buyer_id,
+
+sum(pay_cnt_90day)  as pay_cnt_90day,
+
+sum(case when m.sale_level = 0  then pay_cnt_90day  end)  as pay_cnt_90day_s0,
+
+sum(case when m.sale_level = 1  then pay_cnt_90day  end)  as pay_cnt_90day_s1,
+
+sum(case when m.sale_level = 2  then pay_cnt_90day  end)  as pay_cnt_90day_s2,
+
+sum(case when m.sale_level = 3  then pay_cnt_90day  end)  as pay_cnt_90day_s3,
+
+sum(case when m.sale_level = 4  then pay_cnt_90day  end)  as pay_cnt_90day_s4,
+
+sum(case when m.sale_level = 5  then pay_cnt_90day  end)  as pay_cnt_90day_s5
+
+from (
+
+select  a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from (  select buyer_id,  seller_id,  pay_cnt_90day   from table_A)  a
+
+join
+
+(select seller_id,  sale_level  from table_B)  b
+
+on  a.seller_id  = b.seller_id
+
+)  m
+
+group by m.buyer_id
+
+但是此SQL会引起数据倾斜，原因在于卖家的二八准则，某些卖家90天内会有几百万甚至上千万的买家，但是大部分的卖家90天内买家的数目并不多，join table_A和table_B的时候，
+
+ODPS会按照seller_id进行分发，table_A的大卖家引起了数据倾斜。
+
+但是数据本身无法用mapjoin table_B解决，因为卖家超过千万条，文件大小有几个GB，超过了1GB的限制。
+
+优化方案1：转为mapjoin
+一个很正常的想法是，尽管B表无法直接mapjoin, 但是是否可以间接mapjoin它呢？
+
+实际上此思路有两种途径：限制行和限制列。
+
+限制行的思路是不需要join B全表，而只需要join其在A表中存在的，对于本问题场景，就是过滤掉90天内没有成交的卖家。
+
+限制列的思路是只取需要的字段。
+
+加上如上的限制后，检查过滤后的B表是否满足了Hive  mapjoin的条件，如果能满足，那么添加过滤条件生成一个临时B表，然后mapjoin该表即可。采用此思路的语句如下：
+
+
+
+select
+
+m.buyer_id,
+
+sum(pay_cnt_90day)  as pay_cnt_90day,
+
+sum(case when m.sale_level = 0  then pay_cnt_90day  end)  as pay_cnt_90day_s0,
+
+sum(case when m.sale_level = 1  then pay_cnt_90day  end)  as pay_cnt_90day_s1,
+
+sum(case when m.sale_level = 2  then pay_cnt_90day  end)  as pay_cnt_90day_s2,
+
+sum(case when m.sale_level = 3  then pay_cnt_90day  end)  as pay_cnt_90day_s3,
+
+sum(case when m.sale_level = 4  then pay_cnt_90day  end)  as pay_cnt_90day_s4,
+
+sum(case when m.sale_level = 5  then pay_cnt_90day  end)  as pay_cnt_90day_s5
+
+from ( 
+
+select  /*+mapjoin(b)*/
+
+a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from (  select buyer_id,  seller_id,  pay_cnt_90day   from table_A)  a
+
+join
+
+(
+
+select seller_id,  sale_level  from table_B b0
+
+join 
+
+(select seller_id from table_A group by seller_id) a0
+
+on b0.seller_id = a0.selller_id
+
+)  b
+
+on  a.seller_id  = b.seller_id
+
+)  m
+
+group by m.buyer_id
+
+此方案在一些情况可以起作用，但是很多时候还是无法解决上述问题，因为大部分卖家尽管90天内买家不多，但还是有一些的，过滤后的B表仍然很多。
+
+
+优化方案2：join时用case when语句
+此种解决方案应用场景是：倾斜的值是明确的而且数量很少，比如null值引起的倾斜。其核心是将这些引起倾斜的值随机分发到Reduce,其主要核心逻辑在于join时对这些特殊值concat随机数，
+
+从而达到随机分发的目的。此方案的核心逻辑如下：
+
+select a.user_id, a.order_id, b.user_id
+
+from table_a a join table_b b
+
+on (case when a.user_is is null then concat('hive', rand()) else a.user_id end) = b.user_id
+
+Hive 已对此进行了优化，只需要设置参数skewinfo和skewjoin参数，不修改SQL代码，例如，由于table_B的值“0” 和“1”引起了倾斜，值需要做如下设置：
+
+set hive.optimize.skewinfo=table_B:(selleer_id) [ ( "0") ("1") ) ] 
+
+set hive.optimize.skewjoin = true;
+
+但是方案2因为无法解决本问题场景的倾斜问题，因为倾斜的卖家大量存在而且动态变化。
+
+
+优化方案3：倍数B表，再取模join
+1、通用方案
+此方案的思路是建立一个numbers表，其值只有一列int 行，比如从1到10（具体值可根据倾斜程度确定），然后放大B表10倍，再取模join。代码如下：
+
+
+
+select
+
+m.buyer_id,
+
+sum(pay_cnt_90day)  as pay_cnt_90day,
+
+sum(case when m.sale_level = 0  then pay_cnt_90day  end)  as pay_cnt_90day_s0,
+
+sum(case when m.sale_level = 1  then pay_cnt_90day  end)  as pay_cnt_90day_s1,
+
+sum(case when m.sale_level = 2  then pay_cnt_90day  end)  as pay_cnt_90day_s2,
+
+sum(case when m.sale_level = 3  then pay_cnt_90day  end)  as pay_cnt_90day_s3,
+
+sum(case when m.sale_level = 4  then pay_cnt_90day  end)  as pay_cnt_90day_s4,
+
+sum(case when m.sale_level = 5  then pay_cnt_90day  end)  as pay_cnt_90day_s5
+
+from (
+
+select  a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from (  select buyer_id,  seller_id,  pay_cnt_90day   from table_A)  a
+
+join
+
+(
+
+select  /*+mapjoin(members)*/
+
+seller_id,  sale_level ,member
+
+from table_B
+
+join members
+
+)  b
+
+on  a.seller_id  = b.seller_id
+
+and mod(a.pay_cnt_90day,10)+1 = b.number 
+
+)  m
+
+group by m.buyer_id
+
+此思路的核心在于，既然按照seller_id分发会倾斜，那么再人工增加一列进行分发，这样之前倾斜的值的倾斜程度会减少到原来的1/10，可以通过配置numbers表改放大倍数来降低倾斜程度，
+
+但这样做的一个弊端是B表也会膨胀N倍。
+
+2、专用方案
+通用方案的思路把B表的每条数据都放大了相同的倍数，实际上这是不需要的，只需要把大卖家放大倍数即可：需要首先知道大卖家的名单，即先建立一个临时表动态存放每天最新的大卖家（
+
+比如dim_big_seller）,同时此表的大卖家要膨胀预先设定的倍数（1000倍）。
+
+在A表和B表分别新建一个join列，其逻辑为：如果是大卖家，那么concat一个随机分配正整数（0到预定义的倍数之间，本例为0~1000）；如果不是，保持不变。具体代码如下：
+
+
+
+select
+
+m.buyer_id,
+
+sum(pay_cnt_90day)  as pay_cnt_90day,
+
+sum(case when m.sale_level = 0  then pay_cnt_90day  end)  as pay_cnt_90day_s0,
+
+sum(case when m.sale_level = 1  then pay_cnt_90day  end)  as pay_cnt_90day_s1,
+
+sum(case when m.sale_level = 2  then pay_cnt_90day  end)  as pay_cnt_90day_s2,
+
+sum(case when m.sale_level = 3  then pay_cnt_90day  end)  as pay_cnt_90day_s3,
+
+sum(case when m.sale_level = 4  then pay_cnt_90day  end)  as pay_cnt_90day_s4,
+
+sum(case when m.sale_level = 5  then pay_cnt_90day  end)  as pay_cnt_90day_s5
+
+from (
+
+select  a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from (  
+
+select  /*+mapjoin(big)*/
+
+buyer_id,  seller_id,  pay_cnt_90day,
+
+if(big.seller_id is not null, concat(  table_A.seller_id,  'rnd',  cast(  rand() * 1000 as bigint ), table_A.seller_id)  as seller_id_joinkey
+
+from table_A
+
+left outer join
+
+--big表seller_id有重复，请注意一定要group by 后再join,保证table_A的行数保持不变
+
+（select seller_id  from dim_big_seller  group by seller_id）big
+
+on table_A.seller_id = big.seller_id
+
+)  a
+
+join
+
+(
+
+select  /*+mapjoin(big)*/
+
+seller_id,  sale_level ,
+
+--big表的seller_id_joinkey生成逻辑和上面的生成逻辑一样
+
+coalesce(seller_id_joinkey,table_B.seller_id) as seller_id_joinkey
+
+from table_B
+
+left out join
+
+--table_B表join大卖家表后大卖家行数扩大1000倍，其它卖家行数保持不变
+
+(select seller_id, seller_id_joinkey from dim_big_seller) big
+
+on table_B.seller_id= big.seller_id
+
+)  b
+
+on  a.seller_id_joinkey= b.seller_id_joinkey
+
+and mod(a.pay_cnt_90day,10)+1 = b.number 
+
+)  m
+
+group by m.buyer_id
+
+相比通用方案，专用方案的运行效率明细好了许多，因为只是将B表中大卖家的行数放大了1000倍，其它卖家的行数保持不变，但同时代码复杂了很多，而且必须首先建立大数据表。
+
+方案4：动态一分为二
+实际上方案2和3都用了一分为二的思想，但是都不彻底，对于mapjoin不能解决的问题，终极解决方案是动态一分为二，即对倾斜的键值和不倾斜的键值分开处理，不倾斜的正常join即可，倾斜的把他们找出来做mapjoin，最后union all其结果即可。
+
+但是此种解决方案比较麻烦，代码复杂而且需要一个临时表存放倾斜的键值。代码如下：
+
+--由于数据倾斜，先找出90天买家超过10000的卖家
+
+insert overwrite table  temp_table_B
+
+select 
+
+m.seller_id,  n.sale_level
+
+from (
+
+select   seller_id
+
+from (
+
+select seller_id,count(buyer_id) as byr_cnt
+
+from table_A
+
+group by seller_id
+
+) a
+
+where a.byr_cnt >10000
+
+) m
+
+left join 
+
+(
+
+select seller_id, sale_level  from table_B
+
+) n
+
+on m.seller_id = n.seller_id;
+
+
+
+--对于90天买家超过10000的卖家直接mapjoin,对其它卖家直接正常join即可。
+
+
+
+select
+
+m.buyer_id,
+
+sum(pay_cnt_90day)  as pay_cnt_90day,
+
+sum(case when m.sale_level = 0  then pay_cnt_90day  end)  as pay_cnt_90day_s0,
+
+sum(case when m.sale_level = 1  then pay_cnt_90day  end)  as pay_cnt_90day_s1,
+
+sum(case when m.sale_level = 2  then pay_cnt_90day  end)  as pay_cnt_90day_s2,
+
+sum(case when m.sale_level = 3  then pay_cnt_90day  end)  as pay_cnt_90day_s3,
+
+sum(case when m.sale_level = 4  then pay_cnt_90day  end)  as pay_cnt_90day_s4,
+
+sum(case when m.sale_level = 5  then pay_cnt_90day  end)  as pay_cnt_90day_s5
+
+from (
+
+select  a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from (  select buyer_id,  seller_id,  pay_cnt_90day   from table_A)  a
+
+join
+
+(
+
+select seller_id,  a.sale_level 
+
+from table_A  a
+
+left join temp_table_B b
+
+on a.seller_id = b.seller_id
+
+where b.seller_id is not null
+
+)  b
+
+on  a.seller_id  = b.seller_id
+
+union all
+
+
+
+select  /*+mapjoin(b)*/
+
+a.buer_id,  a.seller_id,  b.sale_level, a.pay_cnt_90day
+
+from ( 
+
+select buyer_id,  seller_id,  pay_cnt_90day   
+
+from table_A
+
+)  a
+
+join
+
+(
+
+select seller_id,  sale_level  from table_B 
+
+)  b
+
+on  a.seller_id  = b.seller_id
+
+)  m  group by m.buyer_id
+
+) m
+
+group by m.buyer_id
+
+
+
+总结：方案1、2以及方案3中的同用方案不能保证解决大表join大表问题，因为它们都存在种种不同的限制和特定使用场景。
+
+而方案3的专用方案和方案4是推荐的优化方案，但是它们都需要新建一个临时表来存储每日动态变化的大卖家。相对方案4来说，方案3的专用方案不需要对代码框架进行修改，但是B表会被放大，所以一定要是是维度表，不然统计结果会是错误的。方案4最通用，自由度最高，但是对代码的更改也最大，甚至修改更难代码框架，可以作为终极方案使用。
+```
