@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>java多线程 | hdetrids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、线程创建4种方式1、继承Thread2、实现Runnable接口3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类4、使用线程池 二、常用线程池newFixedThreadPool newSingleThreadExecutor newCachedThreadPool 创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求 newScheduledTh">
+  <meta name="description" content="一、线程创建4种方式1、继承Thread2、实现Runnable接口3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类4、使用线程池">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java多线程">
 <meta property="og:url" content="http://example.com/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="hdetrids">
-<meta property="og:description" content="一、线程创建4种方式1、继承Thread2、实现Runnable接口3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类4、使用线程池 二、常用线程池newFixedThreadPool newSingleThreadExecutor newCachedThreadPool 创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求 newScheduledTh">
+<meta property="og:description" content="一、线程创建4种方式1、继承Thread2、实现Runnable接口3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类4、使用线程池">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/20160713174739239">
 <meta property="article:published_time" content="2020-12-28T14:20:52.000Z">
-<meta property="article:modified_time" content="2020-12-30T12:51:15.398Z">
+<meta property="article:modified_time" content="2020-12-30T13:32:48.070Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="随笔">
 <meta property="article:tag" content="java">
@@ -166,14 +166,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、线程创建4种方式"><a href="#一、线程创建4种方式" class="headerlink" title="一、线程创建4种方式"></a>一、线程创建4种方式</h2><h3 id="1、继承Thread"><a href="#1、继承Thread" class="headerlink" title="1、继承Thread"></a>1、继承Thread</h3><h3 id="2、实现Runnable接口"><a href="#2、实现Runnable接口" class="headerlink" title="2、实现Runnable接口"></a>2、实现Runnable接口</h3><h3 id="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"><a href="#3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类" class="headerlink" title="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"></a>3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类</h3><h3 id="4、使用线程池"><a href="#4、使用线程池" class="headerlink" title="4、使用线程池"></a>4、使用线程池</h3><p><img src="/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/20160713174739239" alt="FutureTask"></p>
-<h2 id="二、常用线程池"><a href="#二、常用线程池" class="headerlink" title="二、常用线程池"></a>二、常用线程池</h2><pre><code>newFixedThreadPool
+        <h2><span id="一-线程创建4种方式">一、线程创建4种方式</span></h2><h3><span id="1-继承thread">1、继承Thread</span></h3><h3><span id="2-实现runnable接口">2、实现Runnable接口</span></h3><h3><span id="3-使用futuretask接受实现callable接口类的构造然后传入线程类">3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类</span></h3><h3><span id="4-使用线程池">4、使用线程池</span></h3><a id="more"></a>
+
+<p><img src="/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/20160713174739239" alt="FutureTask"></p>
+<h2><span id="二-常用线程池">二、常用线程池</span></h2><pre><code>newFixedThreadPool
 newSingleThreadExecutor
 newCachedThreadPool
 创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求
 newScheduledThreadPool</code></pre>
 <p>​    </p>
-<h2 id="三、线程池7大参数"><a href="#三、线程池7大参数" class="headerlink" title="三、线程池7大参数"></a>三、线程池7大参数</h2><p>​        corePoolSize:线程池中的常驻核心线程数<br>​        maximunPoolSize:线程池能够容纳同时执行的最大线程数<br>​        keepAliveTime:多余的空闲线程的存活时间(多余线程池线程数据超过corePoolSize时，空闲时间达到keepAliveTime)<br>​        Unit:keepAliveTime的单位<br>​        workQueue:任务队列，被提交但尚未被执行的任务<br>​        threadFactory:表示生成线程池中工作线程的线程工厂，用来创建线程一般用默认的即可<br>​        handler:拒绝策略，当队列满了并且工作线程大于等于线程池的最大线程数maximunPoolSize时如何来如何拒绝请求执行的runnable的策略<br>​        </p>
+<h2><span id="三-线程池7大参数">三、线程池7大参数</span></h2><p>​        corePoolSize:线程池中的常驻核心线程数<br>​        maximunPoolSize:线程池能够容纳同时执行的最大线程数<br>​        keepAliveTime:多余的空闲线程的存活时间(多余线程池线程数据超过corePoolSize时，空闲时间达到keepAliveTime)<br>​        Unit:keepAliveTime的单位<br>​        workQueue:任务队列，被提交但尚未被执行的任务<br>​        threadFactory:表示生成线程池中工作线程的线程工厂，用来创建线程一般用默认的即可<br>​        handler:拒绝策略，当队列满了并且工作线程大于等于线程池的最大线程数maximunPoolSize时如何来如何拒绝请求执行的runnable的策略<br>​        </p>
 <pre><code>    线程池工作原理
         1.创建了线程池后，等待提交过来的任务请求。
         2.当调用execute()方法添加一个请求任务，线程池会做如下判断
@@ -191,7 +193,7 @@ newScheduledThreadPool</code></pre>
         3.DiscardOldersPolicy:抛弃队列中等待最久的任务，然后把当前任务加入队列中尝试再次提交当前任务
         4.DiscardPolicy:直接丢弃任务，不予处理也不抛弃异常。
     线程池参数设置：CPU密集型:核心数+1  IO密集型:2*核心数，核心数/（1-阻尼系数（0.8-0.9））</code></pre>
-<h2 id="四、使用Lock代替Synchronized"><a href="#四、使用Lock代替Synchronized" class="headerlink" title="四、使用Lock代替Synchronized"></a>四、使用Lock代替Synchronized</h2><p>​    Synchronized    Lock<br>​    wait            (Condition)c.await<br>​    notify            (Condition)c.signal<br>​    使用Lock可以让多线程之间按顺序执行<br>​    区别：</p>
+<h2><span id="四-使用lock代替synchronized">四、使用Lock代替Synchronized</span></h2><p>​    Synchronized    Lock<br>​    wait            (Condition)c.await<br>​    notify            (Condition)c.signal<br>​    使用Lock可以让多线程之间按顺序执行<br>​    区别：</p>
 <p>​          1原始构成：Synchronized是关键字属于JVM层面（monitorenter monitorexit）Lock是具体类是API层面<br>​          2使用方法：Synchronized不需要手动释放锁，执行完系统会自动让线程释放对锁的占用 Lock需要手动释放锁否则可能死锁<br>​          3等待是否可中断：Synchronized不可中断，除非抛出异常，Lock可中断<br>​          4加锁是否公平<br>​          5锁绑定多个条件Condition(精准唤醒)</p>
 
       
