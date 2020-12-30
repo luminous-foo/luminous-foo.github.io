@@ -295,7 +295,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、线程创建4种方式"><a href="#一、线程创建4种方式" class="headerlink" title="一、线程创建4种方式"></a>一、线程创建4种方式</h2><h3 id="1、继承Thread"><a href="#1、继承Thread" class="headerlink" title="1、继承Thread"></a>1、继承Thread</h3><h3 id="2、实现Runnable接口"><a href="#2、实现Runnable接口" class="headerlink" title="2、实现Runnable接口"></a>2、实现Runnable接口</h3><h3 id="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"><a href="#3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类" class="headerlink" title="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"></a>3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类</h3><h3 id="4、使用线程池"><a href="#4、使用线程池" class="headerlink" title="4、使用线程池"></a>4、使用线程池</h3>
+        <!--toc-->
+
+<p>[TOC]</p>
+<h2 id="一、线程创建4种方式"><a href="#一、线程创建4种方式" class="headerlink" title="一、线程创建4种方式"></a>一、线程创建4种方式</h2><h3 id="1、继承Thread"><a href="#1、继承Thread" class="headerlink" title="1、继承Thread"></a>1、继承Thread</h3><h3 id="2、实现Runnable接口"><a href="#2、实现Runnable接口" class="headerlink" title="2、实现Runnable接口"></a>2、实现Runnable接口</h3><h3 id="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"><a href="#3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类" class="headerlink" title="3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类"></a>3、使用FutureTask接受实现Callable接口类的构造，然后传入线程类</h3><h3 id="4、使用线程池"><a href="#4、使用线程池" class="headerlink" title="4、使用线程池"></a>4、使用线程池</h3>
         
           <a class="article-more-a" href="/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more">more >></a>
         
@@ -386,8 +389,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、DDL语句</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">rename</span> <span class="keyword">to</span> table_name2;   <span class="comment">-- 修改表名</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 changeowner <span class="keyword">to</span> <span class="string">&#x27;ALIYUN$xxx@aliyun.com&#x27;</span>; <span class="comment">--修改表的所有人</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">set</span> <span class="keyword">COMMENT</span> <span class="string">&#x27;tbl comment&#x27;</span>; <span class="comment">--修改表注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> customer; <span class="comment">--修改字段名 </span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer <span class="keyword">COMMENT</span> <span class="string">&#x27;customer&#x27;</span>;<span class="comment">--修改字段注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name column_type <span class="keyword">COMMENT</span> <span class="string">&#x27;column_comment&#x27;</span>;<span class="comment">--同时修改列名和注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMNS</span> (col_name1 type1 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>,col_name2 type2 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>);<span class="comment">--添加列和注释</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <!--toc-->
+
+<p>[TOC]</p>
+<h1><span id="一-ddl语句">一、DDL语句</span></h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">rename</span> <span class="keyword">to</span> table_name2;   <span class="comment">-- 修改表名</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 changeowner <span class="keyword">to</span> <span class="string">&#x27;ALIYUN$xxx@aliyun.com&#x27;</span>; <span class="comment">--修改表的所有人</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name1 <span class="keyword">set</span> <span class="keyword">COMMENT</span> <span class="string">&#x27;tbl comment&#x27;</span>; <span class="comment">--修改表注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer_name <span class="keyword">RENAME</span> <span class="keyword">TO</span> customer; <span class="comment">--修改字段名 </span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> sale_detail <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> customer <span class="keyword">COMMENT</span> <span class="string">&#x27;customer&#x27;</span>;<span class="comment">--修改字段注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> old_col_name new_col_name column_type <span class="keyword">COMMENT</span> <span class="string">&#x27;column_comment&#x27;</span>;<span class="comment">--同时修改列名和注释</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMNS</span> (col_name1 type1 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>,col_name2 type2 <span class="keyword">comment</span> <span class="string">&#x27;XXX&#x27;</span>);<span class="comment">--添加列和注释</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
 
@@ -714,7 +719,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，其最吸引人的莫过于完全免费使用，并且非常稳定。</p>
+        <!-- toc -->
+
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a><ul>
+<li><a href="#github-pages-%E6%98%AF%E4%BB%80%E4%B9%88">GitHub Pages 是什么？</a></li>
+<li><a href="#hexo-%E6%98%AF%E4%BB%80%E4%B9%88">Hexo 是什么？</a></li>
+<li><a href="#hexo-github-%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%8E%9F%E7%90%86">Hexo + GitHub 文章发布原理</a></li>
+<li><a href="#%E4%BC%98%E7%82%B9%E5%92%8C%E4%B8%8D%E8%B6%B3">优点和不足</a></li>
+</ul>
+</li>
+<li><a href="#1-%E5%87%86%E5%A4%87">1. 准备</a><ul>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
+<li><a href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">环境搭建</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%BF%9E%E6%8E%A5-github">2. 连接 Github</a></li>
+<li><a href="#3-%E5%88%9B%E5%BB%BA-github-pages-%E4%BB%93%E5%BA%93">3. 创建 Github Pages 仓库</a></li>
+<li><a href="#4-%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-hexo-%E5%8D%9A%E5%AE%A2%E7%A8%8B%E5%BA%8F">4. 本地安装 Hexo 博客程序</a><ul>
+<li><a href="#41-%E5%AE%89%E8%A3%85-hexo">4.1 安装 Hexo</a></li>
+<li><a href="#42-hexo-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">4.2 Hexo 初始化和本地预览</a></li>
+</ul>
+</li>
+<li><a href="#5-%E9%83%A8%E7%BD%B2-hexo-%E5%88%B0-github-pages">5. 部署 Hexo 到 GitHub Pages</a></li>
+<li><a href="#6-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E5%8F%AF%E9%80%89">6. 绑定域名（可选）</a><ul>
+<li><a href="#61-%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E5%92%8C%E8%A7%A3%E6%9E%90">6.1 域名注册和解析</a></li>
+<li><a href="#62-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E5%88%B0-hexo-%E5%8D%9A%E5%AE%A2">6.2 绑定域名到 Hexo 博客</a></li>
+<li><a href="#63-%E5%BC%80%E5%90%AF-https">6.3 开启 HTTPS</a></li>
+</ul>
+</li>
+<li><a href="#7-%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8">7. 开始使用</a><ul>
+<li><a href="#71-%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0">7.1 发布文章</a></li>
+</ul>
+</li>
+<li><a href="#hexopostrendercodeblockfigure-classhighlight-texttabletrtd-classgutterprespan-classline1spanbrspan-classline2spanbrpretdtd-classcodeprespan-classlinehexo-g-%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2spanbrspan-classlinehexo-d-%E9%83%A8%E7%BD%B2%E5%8F%91%E5%B8%83spanbrpretdtrtablefigurehexopostrendercodeblock"><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g   # 生成页面</span><br><span class="line">hexo d   # 部署发布</span><br></pre></td></tr></table></figure></a><ul>
+<li><a href="#72-%E7%BD%91%E7%AB%99%E8%AE%BE%E7%BD%AE">7.2 网站设置</a></li>
+<li><a href="#73-%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98">7.3 更换主题</a></li>
+<li><a href="#74-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">7.4 常用命令</a></li>
+</ul>
+</li>
+<li><a href="#8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">8 常见问题</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a></li>
+</ul>
+<!-- tocstop -->
+
+<p>[TOC]</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，其最吸引人的莫过于完全免费使用，并且非常稳定。</p>
 <p>虽然搭建时比较麻烦，有点折腾，但是配置完成后，基本不需要操心维护的事，甚至放了几年都忘记了，打开来看文章依然还在。</p>
 <p>本文就详细介绍下如何使用 Hexo + GitHub 搭建免费个人博客网站的教程。</p>
 <hr>
