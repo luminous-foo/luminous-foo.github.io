@@ -58,19 +58,35 @@ beeline> ! connect jdbc:hive2://hdp3:10000
 
 hive SQL语句中 select from where group by having order by 的==执行顺序==？
 
-1.from--where--group by--having--select--order by， 
+执行顺序：
 
-2.from：需要从哪个数据表检索数据 
+from … where … select … group by … having … order by …
 
-3.where：过滤表中数据的条件 
+其实总结hive的执行顺序也是总结mapreduce的执行顺序：
 
-4.group by：如何将上面过滤出的数据分组 
+MR程序的执行顺序：
 
-5.having：对上面已经分组的数据进行过滤的条件 
+map阶段：
 
-6.select：查看结果集中的哪个列，或列的计算结果 
+ 1.执行from加载，进行表的查找与加载
 
-7.order by ：按照什么样的顺序来查看返回的数据
+2.执行where过滤，进行条件过滤与筛选
+
+3.执行select查询：进行输出项的筛选
+
+4.执行group by分组：描述了分组后需要计算的函数
+
+5.map端文件合并：map端本地溢出写文件的合并操作，每个map最终形成一个临时文件。 然后按列映射到对应的reduceReduce阶段：
+
+Reduce阶段：
+
+1.group by：对map端发送过来的数据进行分组并进行计算。
+
+2.select：最后过滤列用于输出结果
+
+3.limit排序后进行结果输出到HDFS文件
+
+所以通过上面的例子我们可以看到，在进行select之后我们会形成一张表，在这张表当中做分组排序这些操作。
 
 ## 1.DDL操作
 
@@ -1472,13 +1488,13 @@ join
 
 (
 
-select seller_id,  sale_level  from table_B b0
+    select seller_id,  sale_level  from table_B b0
 
-join 
+    join 
 
-(select seller_id from table_A group by seller_id) a0
+    (select seller_id from table_A group by seller_id) a0
 
-on b0.seller_id = a0.selller_id
+    on b0.seller_id = a0.selller_id
 
 )  b
 
