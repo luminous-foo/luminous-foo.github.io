@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020 | hdetrids</title>
+  <title>SQL整理 | hdetrids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hdetrids">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="SQL整理维度打平12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL整理">
+<meta property="og:url" content="http://example.com/2021/02/22/SQL/index.html">
 <meta property="og:site_name" content="hdetrids">
+<meta property="og:description" content="SQL整理维度打平12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-22T13:16:31.000Z">
+<meta property="article:modified_time" content="2021-02-22T12:10:59.893Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hdetrids" type="application/atom+xml">
@@ -138,283 +143,148 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SQL整理
+    </h1>
+  
+
+        
+        <a href="/2021/02/22/SQL/" class="archive-article-date">
+  	<time datetime="2021-02-22T13:16:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1><span id="sql整理">SQL整理</span></h1><h2><span id="维度打平">维度打平</span></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> t1 <span class="keyword">as</span> (</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">id</span>  industry_id</span><br><span class="line">    ,industry_name </span><br><span class="line">    <span class="keyword">from</span> weier_ai.ods_monkey_ai_industry_df </span><br><span class="line">    <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> </span><br><span class="line">    <span class="keyword">and</span> <span class="keyword">id</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">and</span> industry_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">and</span> <span class="keyword">status</span> = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">id</span>, industry_name</span><br><span class="line">    </span><br><span class="line">),</span><br><span class="line">t2 <span class="keyword">as</span>(</span><br><span class="line">    <span class="keyword">select</span> </span><br><span class="line">    <span class="string">&#x27;ks&#x27;</span>                                   app </span><br><span class="line">    ,cid                                   cate_id</span><br><span class="line">    ,<span class="keyword">name</span>                                  cate_name</span><br><span class="line">    ,parent_cid                            parent_cate_id</span><br><span class="line">    ,cat_level                             cate_level</span><br><span class="line">    ,<span class="keyword">if</span>(is_parent = <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>)               is_parent  </span><br><span class="line">    ,industry_id                           industry_id</span><br><span class="line">    ,<span class="keyword">status</span>                                cate_status</span><br><span class="line">    ,features                              feature                    </span><br><span class="line">    ,gmt_create                            create_gmt</span><br><span class="line">    ,gmt_modified                          update_gmt    </span><br><span class="line">    ,ds    </span><br><span class="line">    <span class="comment">-- 这表中 有平台id 字段   </span></span><br><span class="line">    <span class="keyword">from</span> weier_ai.ods_resource_platform_product_category_df </span><br><span class="line">    <span class="keyword">where</span>   ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span>  </span><br><span class="line">    <span class="keyword">AND</span>     cid <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">AND</span>     <span class="keyword">name</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">AND</span>     <span class="keyword">status</span> = <span class="string">&#x27;0&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">a.app </span><br><span class="line">,a.cate_id</span><br><span class="line">,a.cate_name</span><br><span class="line">,a.parent_cate_id </span><br><span class="line">,<span class="keyword">CASE</span></span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> <span class="number">4</span></span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> <span class="number">3</span></span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> <span class="number">2</span></span><br><span class="line">            <span class="keyword">when</span> b.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">END</span>     cate_level </span><br><span class="line">,a.is_parent</span><br><span class="line">,a.industry_id</span><br><span class="line">,f.industry_name</span><br><span class="line">,a.cate_status</span><br><span class="line">,a.feature</span><br><span class="line">,a.create_gmt</span><br><span class="line">,a.update_gmt</span><br><span class="line">,<span class="keyword">CASE</span></span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> d.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> c.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_id </span><br><span class="line">            <span class="keyword">when</span> b.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_id </span><br><span class="line">    <span class="keyword">END</span> cate_1_id</span><br><span class="line">,<span class="keyword">CASE</span>   </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> d.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> c.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_name </span><br><span class="line">            <span class="keyword">when</span> b.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_name </span><br><span class="line">    <span class="keyword">END</span> cate_1_name </span><br><span class="line">,<span class="keyword">CASE</span>   </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> c.cate_id </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_id </span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_id </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_2_id </span><br><span class="line">,<span class="keyword">CASE</span>    </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> c.cate_name </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_name </span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_name <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_name  </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_2_name</span><br><span class="line">,<span class="keyword">CASE</span>  </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_id </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_id <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_id </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_3_id</span><br><span class="line">,<span class="keyword">CASE</span>     </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> b.cate_name </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_name </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_3_name</span><br><span class="line">,<span class="keyword">CASE</span>   </span><br><span class="line">            <span class="keyword">WHEN</span>  d.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_id </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_4_id</span><br><span class="line">,<span class="keyword">CASE</span>   </span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> c.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> b.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> a.cate_name <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">THEN</span> a.cate_name  </span><br><span class="line">            <span class="keyword">else</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">END</span> cate_4_name</span><br><span class="line"><span class="keyword">from</span>  t2 a </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> t2 b</span><br><span class="line"><span class="keyword">on</span>  a.parent_cate_id = b.cate_id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> t2 c</span><br><span class="line"><span class="keyword">on</span>  b.parent_cate_id = c.cate_id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> t2 d</span><br><span class="line"><span class="keyword">on</span>  c.parent_cate_id = d.cate_id  </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span>   t1  f </span><br><span class="line"><span class="keyword">ON</span>   a.industry_id = f.industry_id </span><br><span class="line">; </span><br><span class="line"></span><br><span class="line"><span class="comment">--</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span>  </span><br><span class="line">a.app </span><br><span class="line">,a.cate_id</span><br><span class="line">,a.cate_name</span><br><span class="line">,a.parent_cate_id</span><br><span class="line">,a.cate_level <span class="comment">--1 为最高级</span></span><br><span class="line">,a.is_parent</span><br><span class="line">,a.industry_id</span><br><span class="line">,f.industry_name</span><br><span class="line">,a.cate_status</span><br><span class="line">,a.feature</span><br><span class="line">,a.create_gmt</span><br><span class="line">,a.update_gmt</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> a.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> b.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> c.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> d.cate_id </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_1_id</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> a.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> b.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> c.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">1</span> <span class="keyword">THEN</span> d.cate_name </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_1_name</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> a.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> b.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> c.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> d.cate_id </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_2_id</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> a.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> b.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> c.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">2</span> <span class="keyword">THEN</span> d.cate_name </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_2_name</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> a.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> b.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> c.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> d.cate_id </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_3_id</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> a.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> b.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> c.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">3</span> <span class="keyword">THEN</span> d.cate_name </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_3_name</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> a.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> b.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> c.cate_id</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> d.cate_id </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_4_id</span><br><span class="line">,<span class="keyword">CASE</span>    <span class="keyword">WHEN</span> a.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> a.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> b.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> b.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> c.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> c.cate_name</span><br><span class="line">            <span class="keyword">WHEN</span> d.cate_level = <span class="number">4</span> <span class="keyword">THEN</span> d.cate_name </span><br><span class="line">            <span class="keyword">ELSE</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">END</span> cate_4_name</span><br><span class="line"><span class="keyword">FROM</span>    ods_monkey_product_category_df a</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> ods_monkey_product_category_df b</span><br><span class="line"><span class="keyword">on</span>      a.parent_cate_id = b.cate_id </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span>   ods_monkey_product_category_df c</span><br><span class="line"><span class="keyword">ON</span>      b.parent_cate_id = c.cate_id</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> ods_monkey_product_category_df d</span><br><span class="line"><span class="keyword">ON</span>      c.parent_cate_id = d.cate_id </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span>   ods_monkey_ai_industry_df  f</span><br><span class="line"><span class="keyword">ON</span>   a.industry_id = f.industry_id  </span><br></pre></td></tr></table></figure>
+<h2><span id="订单处理">订单处理</span></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> dwd_order_child_order_info_du</span><br><span class="line"><span class="keyword">PARTITION</span>( ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> , app = <span class="string">&#x27;tb&#x27;</span> )  </span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="comment">/*+mapjoin(b)*/</span> </span><br><span class="line"><span class="comment">-- 流程节点  </span></span><br><span class="line">gmt_order_create   order_create_gmt </span><br><span class="line">,gmt_order_pay     pay_gmt   </span><br><span class="line">,gmt_order_ship    ship_gmt </span><br><span class="line">,gmt_order_end     order_end_gmt </span><br><span class="line">,gmt_order_rated   rated_gmt      </span><br><span class="line">,<span class="keyword">if</span>(refund_status=<span class="string">&#x27;SUCCESS&#x27;</span>,gmt_modified, <span class="literal">NULL</span>)    refund_gmt  </span><br><span class="line"><span class="comment">--订单状态   </span></span><br><span class="line">,<span class="keyword">case</span> <span class="keyword">when</span> gmt_order_rated&gt;gmt_order_create <span class="keyword">then</span> <span class="number">6</span></span><br><span class="line"><span class="keyword">when</span> a.order_status=<span class="string">&#x27;TRADE_NO_CREATE_PAY&#x27;</span> <span class="keyword">or</span> a.order_status=<span class="string">&#x27;WAIT_BUYER_PAY&#x27;</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">when</span> a.order_status=<span class="string">&#x27;WAIT_SELLER_SEND_GOODS&#x27;</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">when</span> a.order_status=<span class="string">&#x27;SELLER_CONSIGNED_PART&#x27;</span> <span class="keyword">or</span> a.order_status=<span class="string">&#x27;WAIT_BUYER_CONFIRM_GOODS&#x27;</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">when</span> a.order_status=<span class="string">&#x27;TRADE_FINISHED&#x27;</span> <span class="keyword">then</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">when</span> a.order_status=<span class="string">&#x27;TRADE_CLOSED&#x27;</span> <span class="keyword">or</span> a.order_status=<span class="string">&#x27;TRADE_CLOSED_BY_TAOBAO&#x27;</span> <span class="keyword">then</span> <span class="number">5</span></span><br><span class="line"><span class="keyword">else</span> <span class="literal">null</span> <span class="keyword">end</span> <span class="keyword">as</span> order_status    							<span class="comment">--1：待付款    2：待发货    3：已发货    4：已完成    5：已关闭    6：已评价</span></span><br><span class="line"><span class="comment">--退货状态</span></span><br><span class="line">,<span class="keyword">case</span> <span class="keyword">when</span> a.refund_status=<span class="string">&#x27;WAIT_SELLER_AGREE&#x27;</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">when</span> a.refund_status=<span class="string">&#x27;WAIT_BUYER_RETURN_GOODS&#x27;</span> <span class="keyword">or</span> a.refund_status=<span class="string">&#x27;SELLER_REFUSE_BUYER&#x27;</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">when</span> a.refund_status=<span class="string">&#x27;WAIT_SELLER_CONFIRM_GOODS&#x27;</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">when</span> a.refund_status=<span class="string">&#x27;SUCCESS&#x27;</span> <span class="keyword">then</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">when</span> a.refund_status=<span class="string">&#x27;CLOSED&#x27;</span> <span class="keyword">then</span> <span class="number">5</span></span><br><span class="line"><span class="keyword">else</span> <span class="literal">null</span> <span class="keyword">end</span> <span class="keyword">as</span>   refund_status  							<span class="comment">--1、申请退款    2、处理退款申请    3、退货退款中    4、退款成功    5、退款关闭</span></span><br><span class="line">,<span class="keyword">if</span>(gmt_order_end <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">and</span> order_status = <span class="string">&#x27;TRADE_FINISHED&#x27;</span>, <span class="number">1</span>, <span class="number">0</span>)  is_order_success  </span><br><span class="line">,<span class="keyword">if</span>(refund_status = <span class="string">&#x27;SUCCESS&#x27;</span>, <span class="number">1</span>, <span class="number">0</span>)   is_refund_success </span><br><span class="line">,<span class="keyword">if</span>(gmt_order_rated <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>, buyer_rate, <span class="number">0</span> ) is_buyer_rated   <span class="comment">-- 需要处理   </span></span><br><span class="line"></span><br><span class="line"><span class="comment">--维度字段    </span></span><br><span class="line">,tid   order_id </span><br><span class="line">,<span class="keyword">oid</span>   child_order_id  </span><br><span class="line">,c.product_id</span><br><span class="line">,a.iid  product_src_id  </span><br><span class="line">,c.product_name </span><br><span class="line">,b.shop_id           shop_id   </span><br><span class="line">,b.shop_name         shop_name </span><br><span class="line">,b.shop_account </span><br><span class="line">,b.org_id            org_id </span><br><span class="line">,b.org_name          org_name  </span><br><span class="line"> </span><br><span class="line">,buyer_nick          buyer_id  </span><br><span class="line">,GET_PHONE(tb_tel(GET_JSON_OBJECT(a.features, <span class="string">&#x27;$.wr_t_code&#x27;</span>)))         buyer_phone </span><br><span class="line">,GET_JSON_OBJECT(a.features, <span class="string">&#x27;$.receiver_name&#x27;</span>)             buyer_name   </span><br><span class="line"></span><br><span class="line">,<span class="literal">null</span>    promotion_id   </span><br><span class="line">,GET_ADDRESS(tb_order_decode(GET_JSON_OBJECT(a.features, <span class="string">&#x27;$.wr_s_code&#x27;</span>)),<span class="number">4</span>) <span class="keyword">as</span> province	<span class="comment">--省份</span></span><br><span class="line">,tb_order_decode(GET_JSON_OBJECT(a.features, <span class="string">&#x27;$.wr_c_code&#x27;</span>)) <span class="keyword">as</span> city	 	<span class="comment">--城市</span></span><br><span class="line">,tb_order_decode(GET_JSON_OBJECT(a.features, <span class="string">&#x27;$.wr_d_code&#x27;</span>)) <span class="keyword">as</span> town		<span class="comment">--地区 </span></span><br><span class="line"><span class="comment">-- </span></span><br><span class="line">,<span class="keyword">if</span>(post_fee <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>, post_fee, <span class="number">0</span> )   post_fee_amt</span><br><span class="line">,<span class="keyword">if</span>(payment <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>,   payment , <span class="number">0</span>)   payment_amt</span><br><span class="line">,<span class="keyword">if</span>(<span class="keyword">num</span> &gt; <span class="number">0</span>, <span class="keyword">num</span>, <span class="number">1</span>)   product_num </span><br><span class="line">,<span class="keyword">if</span>(price &gt; <span class="number">0</span>, price, <span class="keyword">if</span>(<span class="keyword">num</span> &gt; <span class="number">0</span>, <span class="keyword">ROUND</span>((total_fee+discount_fee)/<span class="keyword">num</span>), total_fee+discount_fee))   product_amt  </span><br><span class="line">,<span class="keyword">if</span>(<span class="keyword">num</span>*price &gt; <span class="number">0</span>, <span class="keyword">num</span>*price, total_fee+discount_fee )   product_total_amt    </span><br><span class="line">,<span class="keyword">if</span>(discount_fee <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>,<span class="keyword">abs</span>(discount_fee), <span class="number">0</span>)  discount_amt </span><br><span class="line"><span class="comment">--</span></span><br><span class="line">,a.gmt_create       create_gmt  </span><br><span class="line">,a.gmt_modified     update_gmt  </span><br><span class="line">,<span class="keyword">if</span>(a.status = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)   is_del  </span><br><span class="line">,a.features         feature </span><br><span class="line">,TO_JSON(<span class="string">&quot;flag&quot;</span>, flag</span><br><span class="line">    ,<span class="string">&quot;reason&quot;</span>,reason</span><br><span class="line">    ,<span class="string">&quot;refund_success_time&quot;</span>,refund_success_time</span><br><span class="line">)    extra_info </span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span>  (</span><br><span class="line">    <span class="keyword">select</span> *</span><br><span class="line">    <span class="keyword">from</span>  weier_ai.ods_order_info_du </span><br><span class="line">    <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> </span><br><span class="line">    <span class="keyword">and</span> tid <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">AND</span> <span class="keyword">oid</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">AND</span> iid <span class="keyword">is</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">AND</span> seller_nick <span class="keyword">is</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">AND</span> buyer_nick <span class="keyword">is</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> </span><br><span class="line">    <span class="keyword">AND</span> gmt_order_create <span class="keyword">is</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>  </span><br><span class="line">)   a </span><br><span class="line"><span class="comment">-- 排除非客户的订单数据</span></span><br><span class="line"><span class="keyword">join</span> (</span><br><span class="line">    <span class="keyword">select</span> * </span><br><span class="line">    <span class="keyword">from</span> (</span><br><span class="line">        <span class="keyword">select</span> * </span><br><span class="line">        ,ROW_NUMBER()<span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> app, shop_account <span class="keyword">order</span> <span class="keyword">by</span> shop_end_gmt <span class="keyword">desc</span>) rk </span><br><span class="line">        <span class="keyword">from</span> weier_ai.dim_shop </span><br><span class="line">        <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> </span><br><span class="line">        <span class="comment">-- 只获取 tb 的店铺  </span></span><br><span class="line">        <span class="keyword">and</span> app = <span class="string">&#x27;tb&#x27;</span> </span><br><span class="line">        <span class="keyword">and</span> shop_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">        <span class="keyword">and</span> shop_account <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    ) </span><br><span class="line">    <span class="keyword">where</span> rk = <span class="number">1</span> </span><br><span class="line">)   b </span><br><span class="line"><span class="keyword">on</span>  <span class="keyword">trim</span>(a.seller_nick) = <span class="keyword">trim</span>(b.shop_account) </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">JOIN</span> (</span><br><span class="line">    <span class="keyword">select</span> * </span><br><span class="line">    <span class="keyword">from</span> (</span><br><span class="line">        <span class="keyword">select</span> * </span><br><span class="line">        ,ROW_NUMBER()<span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> app, shop_account, product_src_id <span class="keyword">order</span> <span class="keyword">by</span> create_gmt <span class="keyword">desc</span>) rk </span><br><span class="line">        <span class="keyword">from</span> weier_ai.dim_product </span><br><span class="line">        <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span>  </span><br><span class="line">        <span class="comment">-- 只获取 tb 的商品</span></span><br><span class="line">        <span class="keyword">and</span> app = <span class="string">&#x27;tb&#x27;</span></span><br><span class="line">        <span class="keyword">and</span> product_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">        <span class="keyword">and</span> product_src_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">        <span class="keyword">and</span> shop_account <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    ) </span><br><span class="line">    <span class="keyword">where</span> rk = <span class="number">1</span> </span><br><span class="line">)  c </span><br><span class="line"><span class="keyword">on</span> a.iid = c.product_src_id </span><br><span class="line"><span class="keyword">and</span> <span class="keyword">trim</span>(b.shop_account) = <span class="keyword">trim</span>(c.shop_account)     </span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> odps.stage.mapper.split.size = <span class="number">512</span>;</span><br><span class="line"><span class="keyword">INSERT</span> OVERWRITE <span class="keyword">TABLE</span> dwd_order_child_order_info_di</span><br><span class="line"><span class="keyword">PARTITION</span>( ds,app )  </span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="comment">-- 流程节点  </span></span><br><span class="line">order_create_gmt </span><br><span class="line">,pay_gmt   </span><br><span class="line">,ship_gmt </span><br><span class="line">,order_end_gmt </span><br><span class="line">,rated_gmt      </span><br><span class="line">,refund_gmt     </span><br><span class="line">,order_status   </span><br><span class="line">,refund_status  </span><br><span class="line">,is_order_success  </span><br><span class="line">,is_refund_success </span><br><span class="line">,is_buyer_rated   </span><br><span class="line"><span class="comment">--维度字段    </span></span><br><span class="line">,order_id </span><br><span class="line">,child_order_id  </span><br><span class="line">,product_id</span><br><span class="line">,product_src_id  </span><br><span class="line">,product_name</span><br><span class="line">,shop_id  </span><br><span class="line">,shop_name</span><br><span class="line">,shop_account </span><br><span class="line">,org_id</span><br><span class="line">,org_name</span><br><span class="line">,buyer_id</span><br><span class="line">,buyer_phone</span><br><span class="line">,buyer_name</span><br><span class="line">,promotion_id</span><br><span class="line">,province</span><br><span class="line">,city</span><br><span class="line">,town</span><br><span class="line">,post_fee_amt</span><br><span class="line">,payment_amt</span><br><span class="line">,product_num</span><br><span class="line">,product_amt</span><br><span class="line">,product_total_amt</span><br><span class="line">,discount_amt</span><br><span class="line">,create_gmt</span><br><span class="line">,update_gmt</span><br><span class="line">,is_del</span><br><span class="line">,feature</span><br><span class="line">,extra_info</span><br><span class="line">    </span><br><span class="line"><span class="comment">--重新放进order_create_gmt订单创建时间分区</span></span><br><span class="line">,TO_CHAR(order_create_gmt, <span class="string">&#x27;yyyymmdd&#x27;</span>) ds</span><br><span class="line">,app     </span><br><span class="line"><span class="keyword">from</span> dwd_order_child_order_info_du </span><br><span class="line"><span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> <span class="keyword">and</span> app=<span class="string">&#x27;tb&#x27;</span></span><br><span class="line"><span class="keyword">and</span> TO_CHAR(order_create_gmt, <span class="string">&#x27;yyyymmdd&#x27;</span>) &gt; TO_CHAR(<span class="keyword">dateadd</span>(<span class="keyword">to_date</span>(<span class="string">&#x27;$&#123;ds&#125;&#x27;</span>, <span class="string">&#x27;yyyymmdd&#x27;</span>), <span class="number">-9</span>, <span class="string">&#x27;mm&#x27;</span>),<span class="string">&#x27;yyyymmdd&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="comment">-- 流程节点  </span></span><br><span class="line">a.order_create_gmt </span><br><span class="line">,a.pay_gmt   </span><br><span class="line">,a.ship_gmt </span><br><span class="line">,a.order_end_gmt </span><br><span class="line">,a.rated_gmt      </span><br><span class="line">,a.refund_gmt     </span><br><span class="line">,a.order_status   </span><br><span class="line">,a.refund_status  </span><br><span class="line">,a.is_order_success  </span><br><span class="line">,a.is_refund_success </span><br><span class="line">,a.is_buyer_rated   </span><br><span class="line"><span class="comment">--维度字段    </span></span><br><span class="line">,a.order_id </span><br><span class="line">,a.child_order_id  </span><br><span class="line">,a.product_id</span><br><span class="line">,a.product_src_id  </span><br><span class="line">,a.product_name</span><br><span class="line">,a.shop_id  </span><br><span class="line">,a.shop_name</span><br><span class="line">,a.shop_account </span><br><span class="line">,a.org_id</span><br><span class="line">,a.org_name</span><br><span class="line">,a.buyer_id</span><br><span class="line">,a.buyer_phone</span><br><span class="line">,a.buyer_name</span><br><span class="line">,a.promotion_id</span><br><span class="line">,a.province</span><br><span class="line">,a.city</span><br><span class="line">,a.town</span><br><span class="line">,a.post_fee_amt</span><br><span class="line">,a.payment_amt</span><br><span class="line">,a.product_num</span><br><span class="line">,a.product_amt</span><br><span class="line">,a.product_total_amt</span><br><span class="line">,a.discount_amt</span><br><span class="line">,a.create_gmt</span><br><span class="line">,a.update_gmt</span><br><span class="line">,a.is_del</span><br><span class="line">,a.feature</span><br><span class="line">,a.extra_info  </span><br><span class="line"><span class="comment">--</span></span><br><span class="line">,a.ds    </span><br><span class="line">,a.app </span><br><span class="line"><span class="keyword">from</span> (</span><br><span class="line">     <span class="comment">-- 发生变动的老分区订单数据   </span></span><br><span class="line">    <span class="keyword">select</span> * </span><br><span class="line">    <span class="keyword">from</span> dwd_order_child_order_info_di  </span><br><span class="line">    <span class="keyword">where</span> ds <span class="keyword">in</span> (</span><br><span class="line">        <span class="keyword">select</span> TO_CHAR(order_create_gmt, <span class="string">&#x27;yyyymmdd&#x27;</span>)  </span><br><span class="line">        <span class="keyword">from</span> dwd_order_child_order_info_du  </span><br><span class="line">        <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> <span class="keyword">and</span> app=<span class="string">&#x27;tb&#x27;</span> </span><br><span class="line">        <span class="keyword">and</span> order_create_gmt <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">        <span class="keyword">and</span> TO_CHAR(order_create_gmt, <span class="string">&#x27;yyyymmdd&#x27;</span>) &gt; TO_CHAR(<span class="keyword">dateadd</span>(<span class="keyword">to_date</span>(<span class="string">&#x27;$&#123;ds&#125;&#x27;</span>, <span class="string">&#x27;yyyymmdd&#x27;</span>), <span class="number">-9</span>, <span class="string">&#x27;mm&#x27;</span>),<span class="string">&#x27;yyyymmdd&#x27;</span>)</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> TO_CHAR(order_create_gmt, <span class="string">&#x27;yyyymmdd&#x27;</span>)   </span><br><span class="line">    )  </span><br><span class="line">    <span class="keyword">and</span> app=<span class="string">&#x27;tb&#x27;</span></span><br><span class="line">    <span class="keyword">and</span> order_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">and</span> child_order_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">) a </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (</span><br><span class="line">    <span class="comment">-- 新订单数据</span></span><br><span class="line">    <span class="keyword">select</span> * </span><br><span class="line">    <span class="keyword">from</span> dwd_order_child_order_info_du  </span><br><span class="line">    <span class="keyword">where</span> ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span> <span class="keyword">and</span> app=<span class="string">&#x27;tb&#x27;</span> </span><br><span class="line">    <span class="keyword">and</span> order_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">    <span class="keyword">and</span> child_order_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span> </span><br><span class="line">) b </span><br><span class="line"><span class="keyword">on</span> a.order_id = b.order_id </span><br><span class="line"><span class="keyword">and</span> a.child_order_id = b.child_order_id </span><br><span class="line"><span class="keyword">where</span> b.child_order_id <span class="keyword">is</span> <span class="literal">null</span> </span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<h2><span id="正则处理">正则处理</span></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">select</span></span><br><span class="line">    <span class="keyword">replace</span>(</span><br><span class="line">    <span class="keyword">replace</span>(</span><br><span class="line">    <span class="keyword">replace</span>(</span><br><span class="line">    <span class="keyword">replace</span>(</span><br><span class="line">    regexp_replace(</span><br><span class="line">        regexp_substr(</span><br><span class="line">            <span class="keyword">content</span>,<span class="string">&#x27;\&#123;.*\&#125;&#x27;</span>),<span class="string">&#x27;\\\\&#x27;</span>,<span class="string">&#x27;&#x27;</span>),<span class="string">&#x27;\&quot;\&#123;&#x27;</span>,<span class="string">&#x27;&#123;&#x27;</span>),</span><br><span class="line">            <span class="string">&#x27;\&#125;\&quot;&#x27;</span>,<span class="string">&#x27;&#125;&#x27;</span>),<span class="string">&#x27;\&quot;\[&#x27;</span>,<span class="string">&#x27;[&#x27;</span>),<span class="string">&#x27;\]\&quot;&#x27;</span>,<span class="string">&#x27;]&#x27;</span></span><br><span class="line">            ) <span class="keyword">json</span></span><br><span class="line">    <span class="keyword">from</span> ods_loghub_weierai_im_group_online_di_test</span><br><span class="line">    <span class="keyword">where</span></span><br><span class="line">    ds = <span class="string">&#x27;$&#123;ds&#125;&#x27;</span></span><br><span class="line">    <span class="keyword">and</span> <span class="keyword">INSTR</span>(<span class="keyword">content</span>,<span class="string">&#x27;发送至客户端成功&#x27;</span>)&gt;<span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- select </span></span><br><span class="line"><span class="comment">-- case when company regexp &#x27;.*公司$&#x27; then 1 when company regexp &#x27;.*中心$&#x27; then 2 end company_category;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> regexp_extract(<span class="string">&#x27;IloveYou&#x27;</span>,<span class="string">&#x27;(I)(.*?)(You)&#x27;</span>,<span class="number">2</span>) ;</span><br><span class="line"><span class="keyword">select</span> regexp_replace(<span class="string">&quot;IloveYou&quot;</span>,<span class="string">&quot;You&quot;</span>,<span class="string">&quot;&quot;</span>) ;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1 REGEXP_LIKE ：与LIKE的功能相似</span></span><br><span class="line"><span class="comment">--查询value中以1开头60结束的记录并且长度是7位</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> fzq <span class="keyword">where</span> <span class="keyword">value</span> <span class="keyword">like</span> <span class="string">&#x27;1____60&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> fzq <span class="keyword">where</span> <span class="keyword">regexp_like</span>(<span class="keyword">value</span>,<span class="string">&#x27;1....60&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2 REGEXP_INSTR ：与INSTR的功能相似</span></span><br><span class="line"><span class="comment">--返回匹配上的初始索引位置</span></span><br><span class="line"><span class="keyword">select</span> REGEXP_INSTR(<span class="string">&#x27;http3213&#x27;</span>, <span class="string">&#x27;http&#x27;</span>) ; <span class="comment">--1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3 REGEXP_SUBSTR ：与SUBSTR的功能相似</span></span><br><span class="line"><span class="keyword">select</span> REGEXP_SUBSTR(<span class="string">&#x27;http3213&#x27;</span>, <span class="string">&#x27;http&#x27;</span>) ; <span class="comment">--http</span></span><br><span class="line"><span class="comment">-- 4 REGEXP_REPLACE ：与REPLACE的功能相似</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- REGEXP_SUBSTR延伸substr()函数的功能，让你搜索一个正则表达式模式字符串。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 这也类似于REGEXP_INSTR，而是返回子字符串的位置，它返回的子字符串本身。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 5 REGEXP_COUNT(msg_content, &quot;[.?!。？！]+&quot;) 统计匹配上的正则出现次数</span></span><br><span class="line"><span class="keyword">select</span> REGEXP_COUNT(<span class="string">&#x27;！2131232131FFF!&#x27;</span>, <span class="string">&quot;[.?!。？！]+&quot;</span>) ;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/29/hive%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-12-29T13:16:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/29/hive%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">hive知识整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hive</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/22/SQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-12-28T14:20:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/22/UDF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UDF整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/28/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">java多线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/复习//" class="article-tag-list-link color3">复习</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/24/dataworks%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-12-24T14:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/24/dataworks%E5%91%BD%E4%BB%A4/">dataworks命令</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dataworks</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/24/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-12-24T13:40:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/24/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">java基础知识整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/复习//" class="article-tag-list-link color3">复习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/22/%E4%BD%BF%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-12-22T12:47:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/22/%E4%BD%BF%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用hexo+github搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -437,8 +307,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
