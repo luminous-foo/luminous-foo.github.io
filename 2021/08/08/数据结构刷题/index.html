@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>数据结构刷题 | hdetrids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据结构刷题一、动态规划礼物的最大价值*问题描述： 在 一 个 m*n 的 棋 盘 的 每 一 格 都 放 有 一 个 礼 物 ， 每 个 礼 物 都 有 一 定 的 价 值 （ 价 值 大 于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到 到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值 的礼物？ 示例 1: 输入: [ [ 1,">
+  <meta name="description" content="数据结构刷题   一、动态规划 礼物的最大价值* 最大回文子串**** 最大回文子序列长度**** 最大正方形 最长上升子序列****** 通配符匹配*** 丢棋子问题**** 买卖股票的最佳时机**** 换钱的最少货币数****** 子数组最大乘积****** 信封嵌套问题*** 最长公共子序列和子串*** 01背包*** 变向*** 最小编辑代价**** 矩阵的最小路经和****** 最长的括">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构刷题">
 <meta property="og:url" content="http://example.com/2021/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%B7%E9%A2%98/index.html">
 <meta property="og:site_name" content="hdetrids">
-<meta property="og:description" content="数据结构刷题一、动态规划礼物的最大价值*问题描述： 在 一 个 m*n 的 棋 盘 的 每 一 格 都 放 有 一 个 礼 物 ， 每 个 礼 物 都 有 一 定 的 价 值 （ 价 值 大 于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到 到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值 的礼物？ 示例 1: 输入: [ [ 1,">
+<meta property="og:description" content="数据结构刷题   一、动态规划 礼物的最大价值* 最大回文子串**** 最大回文子序列长度**** 最大正方形 最长上升子序列****** 通配符匹配*** 丢棋子问题**** 买卖股票的最佳时机**** 换钱的最少货币数****** 子数组最大乘积****** 信封嵌套问题*** 最长公共子序列和子串*** 01背包*** 变向*** 最小编辑代价**** 矩阵的最小路经和****** 最长的括">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%B7%E9%A2%98/image-20210615153133746.png">
 <meta property="og:image" content="https://www.nowcoder.com/equation?tex=0%E2%88%BCN%5C">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://example.com/2021/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%B7%E9%A2%98/972033963_1569918543237_99901EAF3662F7BE8C4136945570D31C.png">
 <meta property="og:image" content="http://example.com/2021/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%B7%E9%A2%98/image-20210730102243092.png">
 <meta property="article:published_time" content="2021-08-08T03:16:31.000Z">
-<meta property="article:modified_time" content="2021-08-08T03:40:06.525Z">
+<meta property="article:modified_time" content="2021-08-08T03:46:32.901Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1><span id="数据结构刷题">数据结构刷题</span></h1><h2><span id="一-动态规划">一、动态规划</span></h2><h3><span id="礼物的最大价值">礼物的最大价值*</span></h3><p>问题描述：</p>
+        <h1><span id="数据结构刷题">数据结构刷题</span></h1><!-- toc -->
+
+<ul>
+<li><a href="#%E4%B8%80-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">一、动态规划</a><ul>
+<li><a href="#%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC">礼物的最大价值*</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">最大回文子串****</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97%E9%95%BF%E5%BA%A6">最大回文子序列长度****</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2">最大正方形</a></li>
+<li><a href="#%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97">最长上升子序列******</a></li>
+<li><a href="#%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D">通配符匹配*<strong>**</strong></a></li>
+<li><a href="#%E4%B8%A2%E6%A3%8B%E5%AD%90%E9%97%AE%E9%A2%98">丢棋子问题**<strong>**</strong></a></li>
+<li><a href="#%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA">买卖股票的最佳时机**<strong>**</strong></a></li>
+<li><a href="#%E6%8D%A2%E9%92%B1%E7%9A%84%E6%9C%80%E5%B0%91%E8%B4%A7%E5%B8%81%E6%95%B0">换钱的最少货币数******</a></li>
+<li><a href="#%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E4%B9%98%E7%A7%AF">子数组最大乘积******</a></li>
+<li><a href="#%E4%BF%A1%E5%B0%81%E5%B5%8C%E5%A5%97%E9%97%AE%E9%A2%98">信封嵌套问题*<strong>**</strong></a></li>
+<li><a href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C%E5%AD%90%E4%B8%B2">最长公共子序列和子串*<strong>**</strong></a></li>
+<li><a href="#01%E8%83%8C%E5%8C%85">01背包*<strong>**</strong></a></li>
+<li><a href="#%E5%8F%98%E5%90%91">变向*<strong>**</strong></a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E7%BC%96%E8%BE%91%E4%BB%A3%E4%BB%B7">最小编辑代价**<strong>**</strong></a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E7%BB%8F%E5%92%8C">矩阵的最小路经和******</a></li>
+<li><a href="#%E6%9C%80%E9%95%BF%E7%9A%84%E6%8B%AC%E5%8F%B7%E5%AD%90%E4%B8%B2">最长的括号子串**<strong>**</strong></a></li>
+<li><a href="#%E7%89%9B%E5%96%9C%E6%AC%A28">牛喜欢8******</a></li>
+<li><a href="#%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2">把数字翻译成字符串*<strong>**</strong></a></li>
+<li><a href="#%E5%B8%A6%E6%9D%83%E8%B7%AF%E5%BE%84%E5%92%8C">带权路径和******</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E9%80%92%E5%BD%92%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95">二、递归&amp;&amp;回溯算法</a><ul>
+<li><a href="#%E5%9B%9E%E6%BA%AF%E6%A8%A1%E6%9D%BF">回溯模板</a></li>
+<li><a href="#bfs%E6%A8%A1%E6%9D%BF">bfs模板</a></li>
+<li><a href="#%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98">八皇后问题**<strong>**</strong></a></li>
+<li><a href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%A7%A3%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5%E9%97%AE%E9%A2%98">回溯算法解黄金矿工问题*<strong>**</strong></a></li>
+<li><a href="#%E7%81%AB%E6%9F%B4%E6%8B%BC%E6%AD%A3%E6%96%B9%E5%BD%A2">火柴拼正方形*<strong>**</strong></a></li>
+<li><a href="#%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98">汉诺塔问题*****</a></li>
+<li><a href="#%E6%9C%89%E9%87%8D%E5%A4%8D%E9%A1%B9%E6%95%B0%E5%AD%97%E7%9A%84%E6%89%80%E6%9C%89%E6%8E%92%E5%88%97">有重复项数字的所有排列**</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84">二叉树中和为某一值的路径******</a></li>
+<li><a href="#%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91">重建二叉树******</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86">二叉树层次遍历*<strong>**</strong></a></li>
+<li><a href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4">机器人的运动范围******</a></li>
+<li><a href="#%E5%8A%A0%E8%B5%B7%E6%9D%A5%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E7%BB%84%E5%90%88">加起来和为目标值的组合*<strong>**</strong></a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">三、排序算法</a><ul>
+<li><a href="#%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%A4%A7">寻找第k大*<strong>**</strong></a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95">四、贪心算法</a><ul>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E8%A7%A3%E6%8C%89%E8%A6%81%E6%B1%82%E8%A1%A5%E9%BD%90%E6%95%B0%E7%BB%84">贪心算法解按要求补齐数组</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E8%A7%A3%E5%86%B3%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C">贪心算法解决分发糖果</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%94-%E5%8F%8C%E6%8C%87%E9%92%88">五、双指针</a></li>
+<li><a href="#%E5%85%AD-%E9%93%BE%E8%A1%A8">六、链表</a></li>
+<li><a href="#%E4%B8%83-%E6%9F%A5%E6%89%BE">七、查找</a></li>
+</ul>
+<!-- tocstop -->
+
+<p>[TOC]</p>
+<a id="more"></a>
+
+<h2><span id="一-动态规划">一、动态规划</span></h2><h3><span id="礼物的最大价值">礼物的最大价值*</span></h3><p>问题描述：</p>
 <p>在 一 个 m*n 的 棋 盘 的 每 一 格 都 放 有 一 个 礼 物 ， 每 个 礼 物 都 有 一 定 的 价 值 （ 价 值 大 于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到 到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值 的礼物？</p>
 <p>示例 1: 输入: [ [ 1, 3, 1 ] , [ 1 ,5, 1 ] , [ 4 ,2, 1] ] 输出: 1 2 解释: 路径 1→3→5→2→1 可以拿到最多价值的礼物</p>
 <p>提示： 0 &lt; grid. l ength &lt;= 200 0 &lt; grid[0]. l ength &lt;= 200</p>
